@@ -65,7 +65,7 @@ $posts = $db->query('SELECT m.name, m.picture, p.* FROM members m, posts p WHERE
 <?php foreach($posts as $post): ?>
     <div class="msg">
     <img src="member_picture/<?php print(htmlspecialchars($post['picture'], ENT_QUOTES)); ?>" width="48" height="48" alt="<?php print(htmlspecialchars($post['name'], ENT_QUOTES)); ?>" />
-    <p><?php print(htmlspecialchars($post['message'], ENT_QUOTES)); ?><span class="name"> By <?php print(htmlspecialchars($post['name'], ENT_QUOTES)); ?></span>[<a href="index.php?res=">Re</a>]</p>
+    <p><?php print(htmlspecialchars($post['message'], ENT_QUOTES)); ?><span class="name"> By <?php print(htmlspecialchars($post['name'], ENT_QUOTES)); ?></span>[<a href="index.php?res=<?php print(htmlspecialchars($post['id'], ENT_QUOTES)); ?>">Re</a>]</p>
     <p class="day"><a href="view.php?id="><?php print(htmlspecialchars($post['created'], ENT_QUOTES)); ?></a>
 <a href="view.php?id=">
 返信元のメッセージ</a>
